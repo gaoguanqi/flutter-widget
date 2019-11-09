@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_widget/app/global/toast_utils.dart';
 
+/**
+ * 一般用于页面的顶部
+ */
 class AppBarPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -53,7 +56,10 @@ class AppBarPage extends StatelessWidget {
             ],
           ),
         ],
-        flexibleSpace: Icon(Icons.zoom_out_map),//此小组件堆叠在工具栏和标签栏后面。它的高度与应用栏的整体高度相同
+        flexibleSpace: Icon(
+          Icons.zoom_out_map,
+          color: Colors.blueAccent,
+        ),//此小组件堆叠在工具栏和标签栏后面。它的高度与应用栏的整体高度相同
       ),
       body: Container(
         child: Text(

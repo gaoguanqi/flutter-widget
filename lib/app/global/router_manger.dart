@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_widget/pages/align_page.dart';
 import 'package:flutter_widget/pages/appbar_page.dart';
+import 'package:flutter_widget/pages/bottomappbar_page.dart';
 import 'package:flutter_widget/pages/home_page.dart';
 
 import 'page_route_anim.dart';
@@ -11,18 +12,21 @@ class RouteName {
 
   static const String align = 'align';
   static const String appBar = 'appBar';
+  static const String bottomAppBar = 'bottomAppBar';
 
 }
 
 class Router {
   static Route<dynamic> generateRoute(RouteSettings settings) {
     switch (settings.name) {
+      case RouteName.home:
+        return AnimRouteBuilder(HomePage());
       case RouteName.align:
         return AnimRouteBuilder(AlignPage());
       case RouteName.appBar:
         return AnimRouteBuilder(AppBarPage());
-      case RouteName.home:
-        return AnimRouteBuilder(HomePage());
+      case RouteName.bottomAppBar:
+        return AnimRouteBuilder(BottomAppBarPage());
       default:
         return MaterialPageRoute(
             builder: (_) => Scaffold(
