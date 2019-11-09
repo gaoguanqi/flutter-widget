@@ -1,14 +1,17 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_widget/pages/align_page.dart';
+import 'package:flutter_widget/pages/appbar_page.dart';
 import 'package:flutter_widget/pages/home_page.dart';
 
 import 'page_route_anim.dart';
 
 class RouteName {
-  static const String align = 'align';
-  static const String login = 'login';
   static const String home = 'home';
+
+  static const String align = 'align';
+  static const String appBar = 'appBar';
+
 }
 
 class Router {
@@ -16,8 +19,8 @@ class Router {
     switch (settings.name) {
       case RouteName.align:
         return AnimRouteBuilder(AlignPage());
-      case RouteName.login:
-        return AnimRouteBuilder(HomePage());
+      case RouteName.appBar:
+        return AnimRouteBuilder(AppBarPage());
       case RouteName.home:
         return AnimRouteBuilder(HomePage());
       default:

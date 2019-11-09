@@ -3,12 +3,11 @@ import 'package:flutter/material.dart';
 class TemplatePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Container(
-      child: Center(
-        child: Text(
-          'TemplePage'
-        ),
+    return Scaffold(
+      appBar: AppBar(
+        title: Text(''),
       ),
+      body: Container(),
     );
   }
 }

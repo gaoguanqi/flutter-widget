@@ -65,6 +65,10 @@ class _HomePageState extends State<HomePage> {
         Navigator.of(context).pushNamed(RouteName.align);
       }
         break;
+      case 'AppBar':{
+        Navigator.of(context).pushNamed(RouteName.appBar);
+      }
+      break;
       default:{
         ToastUtils.showToast('未匹配$text');
       }
