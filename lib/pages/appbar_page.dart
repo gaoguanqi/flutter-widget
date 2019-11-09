@@ -35,25 +35,35 @@ class AppBarPage extends StatelessWidget {
           ),
           PopupMenuButton<String>( // 与 actions 配合使用的菜单按钮
             itemBuilder: (BuildContext context) => <PopupMenuItem<String>>[
-              PopupMenuItem<String>(
+              PopupMenuItem(
                 value: 'find', //相当于 menu id
-                child: FlatButton(
-                  child: Text('文本 find'),
-                  onPressed: (){
-                    ToastUtils.showToast('文本 find');
-                  },
-                ),
+                child: Text('文本 find'),
               ),
               PopupMenuItem<String>(
                 value: 'search', //相当于 menu id
-                child: FlatButton(
-                  child: Text('文本 search'),
-                  onPressed: (){
-                    ToastUtils.showToast('文本 search');
-                  },
-                ),
+                child: Text('文本 search'),
               ),
             ],
+            onSelected: (String value){
+              switch(value){
+                case 'find':{
+                  ToastUtils.showToast('点击了$value');
+                }
+                break;
+                case 'search':{
+                  ToastUtils.showToast('点击了$value');
+                }
+                break;
+
+                default:{
+                  ToastUtils.showToast('点击了$value');
+                }
+                break;
+              }
+            },
+            onCanceled: (){ //关闭的监听
+              ToastUtils.showToast('取消');
+            },
           ),
         ],
         flexibleSpace: Icon(

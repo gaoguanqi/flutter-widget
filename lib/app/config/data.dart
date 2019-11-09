@@ -5,8 +5,8 @@ class Data {
     _homeData.add('Align');
     _homeData.add('AppBar');
     _homeData.add('BottomAppBar');
-    _homeData.add('1');
-    _homeData.add('1');
+    _homeData.add('ButtonBar');
+    _homeData.add('FlexibleSpaceBar');
     _homeData.add('1');
     _homeData.add('1');
     _homeData.add('1');

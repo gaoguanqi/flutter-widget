@@ -3,6 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_widget/pages/align_page.dart';
 import 'package:flutter_widget/pages/appbar_page.dart';
 import 'package:flutter_widget/pages/bottomappbar_page.dart';
+import 'package:flutter_widget/pages/buttonbar_page.dart';
+import 'package:flutter_widget/pages/flexiblespacebar_page.dart';
 import 'package:flutter_widget/pages/home_page.dart';
 
 import 'page_route_anim.dart';
@@ -13,6 +15,8 @@ class RouteName {
   static const String align = 'align';
   static const String appBar = 'appBar';
   static const String bottomAppBar = 'bottomAppBar';
+  static const String buttonBar = 'buttonBar';
+  static const String flexibleSpaceBar = 'flexibleSpaceBar';
 
 }
 
@@ -27,6 +31,10 @@ class Router {
         return AnimRouteBuilder(AppBarPage());
       case RouteName.bottomAppBar:
         return AnimRouteBuilder(BottomAppBarPage());
+      case RouteName.buttonBar:
+        return AnimRouteBuilder(ButtonBarPage());
+      case RouteName.flexibleSpaceBar:
+        return AnimRouteBuilder(FlexibleSpaceBarPage());
       default:
         return MaterialPageRoute(
             builder: (_) => Scaffold(
