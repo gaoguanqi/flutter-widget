@@ -16,6 +16,10 @@ class _TabBarPageState extends State<TabBarPage> with SingleTickerProviderStateM
     Tab(text: 'tab4',icon: Icon(Icons.favorite,color: Colors.white,),),
     Tab(text: 'tab5',icon: Icon(Icons.favorite,color: Colors.white,),),
     Tab(text: 'tab6',icon: Icon(Icons.favorite,color: Colors.white,),),
+    Tab(text: 'tab7',icon: Icon(Icons.favorite,color: Colors.white,),),
+    Tab(text: 'tab8',icon: Icon(Icons.favorite,color: Colors.white,),),
+    Tab(text: 'tab9',icon: Icon(Icons.favorite,color: Colors.white,),),
+    Tab(text: 'tab10',icon: Icon(Icons.favorite,color: Colors.white,),),
   ];
 
    List<Widget> _tabViews = [
@@ -25,6 +29,10 @@ class _TabBarPageState extends State<TabBarPage> with SingleTickerProviderStateM
      Center(child: Text('页面4'),),
      Center(child: Text('页面5'),),
      Center(child: Text('页面6'),),
+     Center(child: Text('页面7'),),
+     Center(child: Text('页面8'),),
+     Center(child: Text('页面9'),),
+     Center(child: Text('页面10'),),
    ];
 
 
