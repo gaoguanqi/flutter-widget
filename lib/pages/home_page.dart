@@ -81,6 +81,18 @@ class _HomePageState extends State<HomePage> {
         Navigator.of(context).pushNamed(RouteName.flexibleSpaceBar);
       }
       break;
+      case 'SliverAppBar':{
+        Navigator.of(context).pushNamed(RouteName.sliverAppBarPage);
+      }
+      break;
+      case 'SnackBar':{
+        Navigator.of(context).pushNamed(RouteName.snackBar);
+      }
+      break;
+      case 'TabBar':{
+        Navigator.of(context).pushNamed(RouteName.tabBar);
+      }
+      break;
       default:{
         ToastUtils.showToast('未匹配$text');
       }

@@ -6,7 +6,7 @@ import 'package:flutter/material.dart';
 class FlexibleSpaceBarPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return Scaffold(//去掉了 appBar
       body: NestedScrollView( // 可滑动的组件
         headerSliverBuilder: (BuildContext context, bool innerBoxIsScrolled){
           return <Widget>[
@@ -25,7 +25,7 @@ class FlexibleSpaceBarPage extends StatelessWidget {
                 ),
                 background: Image.network(
                     'http://b151.photo.store.qq.com/psb?/88aa4cf6-a419-49cd-bde6-fcb197e7fac9/EkWOkpObi8z0AXLRPj87yMm.LsuV372mB5Mx.RG0en4!/m/YZzYA1qfIAAAYt7aA1q3IAAAnull&bo=ngL2AQAAAAABBEg!&rf=photolist&t=5',
-                    fit: BoxFit.cover
+                    fit: BoxFit.fill
                 ),
               ),
             ),

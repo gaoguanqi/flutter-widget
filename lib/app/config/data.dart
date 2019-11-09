@@ -7,8 +7,9 @@ class Data {
     _homeData.add('BottomAppBar');
     _homeData.add('ButtonBar');
     _homeData.add('FlexibleSpaceBar');
-    _homeData.add('1');
-    _homeData.add('1');
+    _homeData.add('SliverAppBar');
+    _homeData.add('SnackBar');
+    _homeData.add('TabBar');
     _homeData.add('1');
     _homeData.add('1');
     _homeData.add('1');
