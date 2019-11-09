@@ -1,11 +1,12 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_widget/pages/align_page.dart';
 import 'package:flutter_widget/pages/home_page.dart';
 
 import 'page_route_anim.dart';
 
 class RouteName {
-  static const String splash = 'splash';
+  static const String align = 'align';
   static const String login = 'login';
   static const String home = 'home';
 }
@@ -13,8 +14,8 @@ class RouteName {
 class Router {
   static Route<dynamic> generateRoute(RouteSettings settings) {
     switch (settings.name) {
-      case RouteName.splash:
-        return AnimRouteBuilder(HomePage());
+      case RouteName.align:
+        return AnimRouteBuilder(AlignPage());
       case RouteName.login:
         return AnimRouteBuilder(HomePage());
       case RouteName.home:

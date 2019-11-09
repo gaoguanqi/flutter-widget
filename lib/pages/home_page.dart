@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_staggered_animations/flutter_staggered_animations.dart';
 import 'package:flutter_widget/app/config/data.dart';
+import 'package:flutter_widget/app/global/router_manger.dart';
 import 'package:flutter_widget/app/global/toast_utils.dart';
 
 class HomePage extends StatefulWidget {
@@ -21,7 +22,6 @@ class _HomePageState extends State<HomePage> {
           style: TextStyle(
               fontSize: 18.0, fontWeight: FontWeight.bold, color: Colors.white),
         ),
-        backgroundColor: Colors.deepOrangeAccent,
       ),
       body: _body(context),
     );
@@ -40,7 +40,7 @@ class _HomePageState extends State<HomePage> {
                       child: Container(
                         margin: EdgeInsets.all(5.0),
                         alignment: Alignment.center,
-                        color: Colors.deepOrange.shade200,
+                        color: Colors.blueAccent.shade100,
                         height: 60.0,
                         child: Text(
                           _list[index],
@@ -48,8 +48,8 @@ class _HomePageState extends State<HomePage> {
                         ),
                       ),
                       onTap: (){
-                        ToastUtils.showToast(_list[index]);
-                      },
+                        onClikcItem(_list[index]);
+                      }
                     ),
                   ),
                 ),
@@ -57,5 +57,18 @@ class _HomePageState extends State<HomePage> {
           },
           itemCount: _list.length),
     );
+  }
+
+  void onClikcItem(String text) {
+    switch(text){
+      case 'Align':{
+        Navigator.of(context).pushNamed(RouteName.align);
+      }
+        break;
+      default:{
+        ToastUtils.showToast('未匹配$text');
+      }
+        break;
+    }
   }
 }
