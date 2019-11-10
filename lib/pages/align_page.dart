@@ -16,8 +16,8 @@ class AlignPage extends StatelessWidget {
         color: Colors.blueAccent,
         child: Align(
           alignment: Alignment.center, //对齐方式 居中
-          widthFactor: 2, //子控件宽度的系数   (Align  的宽高是 子控件的 2 被,alignment失效)
-          heightFactor: 2,//子控件高度的系数
+//          widthFactor: 2, //子控件宽度的系数   (Align  的宽高是 子控件的 2 被,alignment失效)
+//          heightFactor: 2,//子控件高度的系数
           child: Container(
             color: Colors.redAccent,
             width: 100.0,

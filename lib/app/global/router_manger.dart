@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_widget/pages/align_page.dart';
 import 'package:flutter_widget/pages/appbar_page.dart';
 import 'package:flutter_widget/pages/bottomappbar_page.dart';
+import 'package:flutter_widget/pages/bottomnavigationbar_page.dart';
 import 'package:flutter_widget/pages/buttonbar_page.dart';
 import 'package:flutter_widget/pages/flexiblespacebar_page.dart';
 import 'package:flutter_widget/pages/home_page.dart';
@@ -23,6 +24,7 @@ class RouteName {
   static const String sliverAppBarPage = 'sliverAppBarPage';
   static const String snackBar = 'snackBar';
   static const String tabBar = 'tabBar';
+  static const String bottomNavigationBar = 'bottomNavigationBar';
 
 }
 
@@ -47,6 +49,8 @@ class Router {
         return AnimRouteBuilder(SnackBarPage());
      case RouteName.tabBar:
         return AnimRouteBuilder(TabBarPage());
+     case RouteName.bottomNavigationBar:
+        return AnimRouteBuilder(BottomNavigationBarPage());
       default:
         return MaterialPageRoute(
             builder: (_) => Scaffold(

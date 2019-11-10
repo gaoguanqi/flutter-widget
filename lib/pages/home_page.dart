@@ -11,19 +11,31 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   List<String> _list = Data().HomeData();
+  DateTime _popTime;
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        centerTitle: true,
-        title: Text(
-          'Widget',
-          style: TextStyle(
-              fontSize: 18.0, fontWeight: FontWeight.bold, color: Colors.white),
+    return WillPopScope(
+      child: Scaffold(
+        appBar: AppBar(
+          centerTitle: true,
+          title: Text(
+            'Widget',
+            style: TextStyle(
+                fontSize: 18.0, fontWeight: FontWeight.bold, color: Colors.white),
+          ),
         ),
+        body: _body(context),
       ),
-      body: _body(context),
+      onWillPop: () async {
+        if(_popTime == null || DateTime.now().difference(_popTime)> Duration(seconds: 1)){
+          //两次点击时间间隔超过1秒则重新计时
+          _popTime = DateTime.now();
+          ToastUtils.showToast('再按一次退出');
+          return false;
+        }
+        return true;
+      },
     );
   }
 
@@ -91,6 +103,10 @@ class _HomePageState extends State<HomePage> {
       break;
       case 'TabBar':{
         Navigator.of(context).pushNamed(RouteName.tabBar);
+      }
+      break;
+      case 'BottomNavigationBar':{
+        Navigator.of(context).pushNamed(RouteName.bottomNavigationBar);
       }
       break;
       default:{

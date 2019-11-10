@@ -10,7 +10,7 @@ class Data {
     _homeData.add('SliverAppBar');
     _homeData.add('SnackBar');
     _homeData.add('TabBar');
-    _homeData.add('1');
+    _homeData.add('BottomNavigationBar');
     _homeData.add('1');
     _homeData.add('1');
     _homeData.add('1');
