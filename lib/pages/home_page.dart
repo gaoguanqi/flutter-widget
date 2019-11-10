@@ -109,6 +109,14 @@ class _HomePageState extends State<HomePage> {
         Navigator.of(context).pushNamed(RouteName.bottomNavigationBar);
       }
       break;
+      case 'ConstrainedBox':{
+        Navigator.of(context).pushNamed(RouteName.constrainedBox);
+      }
+      break;
+      case 'DecoratedBox':{
+        Navigator.of(context).pushNamed(RouteName.decoratedBox);
+      }
+      break;
       default:{
         ToastUtils.showToast('未匹配$text');
       }
