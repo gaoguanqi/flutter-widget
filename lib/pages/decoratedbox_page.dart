@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_widget/app/global/toast_utils.dart';
 
 /**
  * 装饰器组件
@@ -24,31 +23,115 @@ class DecoratedBoxPage extends StatelessWidget {
         title: Text('DecoratedBox'),
       ),
       body: Center(
-        child: GestureDetector(
-          child: DecoratedBox(
-            decoration: BoxDecoration(
-              gradient: LinearGradient(colors: [Colors.red, Colors.orange[700]]),
-              //背景渐变
-              borderRadius: BorderRadius.circular(3.0),
-              //3像素圆角
-              boxShadow: [
-                //阴影
-                BoxShadow(
-                    color: Colors.black54,
-                    offset: Offset(2.0, 2.0),
-                    blurRadius: 4.0)
-              ],
+        child: Column(
+          children: <Widget>[
+            Padding(
+              padding: EdgeInsets.all(10.0),
             ),
-            child: Padding(
-              padding: EdgeInsets.symmetric(horizontal: 80.0, vertical: 18.0),
-              child: Text('按钮',style: TextStyle(color: Colors.white),),
+            GestureDetector(
+              child: DecoratedBox(
+                decoration: BoxDecoration(
+                  gradient: LinearGradient(colors: [Colors.red, Colors.orange[700]]),
+                  //背景渐变
+                  borderRadius: BorderRadius.circular(3.0),
+                  //3像素圆角
+                  boxShadow: [
+                    //阴影
+                    BoxShadow(
+                        color: Colors.black54,
+                        offset: Offset(2.0, 2.0),
+                        blurRadius: 4.0)
+                  ],
+                ),
+                child: Padding(
+                  padding: EdgeInsets.symmetric(horizontal: 80.0, vertical: 18.0),
+                  child: Text('按钮',style: TextStyle(color: Colors.white),),
+                ),
+              ),
             ),
-          ),
-          onTap: (){
-            ToastUtils.showTopToast('按钮');
-          },
+
+            Padding(
+              padding: EdgeInsets.all(10.0),
+            ),
+            MyText('点击按钮'),
+          ],
         ),
       ),
     );
   }
 }
+
+class MyText extends StatefulWidget {
+  String _txt;
+  MyText(String txt){
+    this._txt = txt;
+  }
+
+  @override
+  _MyTextState createState() => _MyTextState(_txt);
+}
+
+class _MyTextState extends State<MyText> {
+  List<Color> _colors = [
+    Colors.red, Colors.orange[700],
+  ];
+
+
+
+  String _txt;
+
+  _MyTextState(String txt){
+    this._txt = txt;
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return GestureDetector(
+      child: DecoratedBox(
+        decoration: BoxDecoration(
+          gradient: LinearGradient(colors: _colors),
+          //背景渐变
+          borderRadius: BorderRadius.circular(3.0),
+          //3像素圆角
+          boxShadow: [
+            //阴影
+            BoxShadow(
+                color: Colors.white,
+                offset: Offset(2.0, 2.0),
+                blurRadius: 4.0)
+          ],
+        ),
+        child: Padding(
+          padding: EdgeInsets.symmetric(horizontal: 80.0, vertical: 18.0),
+          child: Text(_txt,style: TextStyle(color: Colors.white),),
+        ),
+      ),
+
+      onTapDown: (TapDownDetails details){
+
+        setState(() {
+          _colors = [
+            Colors.blue, Colors.blue[700],
+          ];
+        });
+      },
+
+      onTapUp: (TapUpDetails details){
+        setState(() {
+          _colors = [
+            Colors.red, Colors.orange[700],
+          ];
+        });
+      },
+
+      onTapCancel: (){
+        setState(() {
+          _colors = [
+            Colors.red, Colors.orange[700],
+          ];
+        });
+      },
+    );
+  }
+}
+
