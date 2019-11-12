@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_widget/app/global/toast_utils.dart';
 
 /**
  * 装饰器组件
@@ -54,6 +55,34 @@ class DecoratedBoxPage extends StatelessWidget {
               padding: EdgeInsets.all(10.0),
             ),
             MyText('点击按钮'),
+            Padding(
+              padding: EdgeInsets.all(10.0),
+            ),
+
+            Row(
+              children: <Widget>[
+                Expanded(
+                  flex: 1,
+                  child: FlatButton(
+                    color: Colors.deepPurpleAccent,
+                    child: Text('button1'),
+                    onPressed: (){
+                      ToastUtils.showTopToast('button1');
+                    },
+                  ),
+                ),
+                Expanded(
+                  flex: 1,
+                  child: FlatButton(
+                    color: Colors.deepOrangeAccent,
+                    child: Text('button2'),
+                    onPressed: (){
+                      ToastUtils.showTopToast('button2');
+                    },
+                  ),
+                ),
+              ],
+            ),
           ],
         ),
       ),
