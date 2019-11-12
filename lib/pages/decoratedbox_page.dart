@@ -136,6 +136,9 @@ class _MyTextState extends State<MyText> {
         ),
       ),
 
+      onTap: (){
+
+      },
       onTapDown: (TapDownDetails details){
 
         setState(() {

@@ -117,6 +117,10 @@ class _HomePageState extends State<HomePage> {
         Navigator.of(context).pushNamed(RouteName.decoratedBox);
       }
       break;
+      case 'Provider':{
+        Navigator.of(context).pushNamed(RouteName.provider);
+      }
+      break;
       default:{
         ToastUtils.showToast('未匹配$text');
       }
