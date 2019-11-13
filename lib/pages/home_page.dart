@@ -125,6 +125,10 @@ class _HomePageState extends State<HomePage> {
         Navigator.of(context).pushNamed(RouteName.fittedBox);
       }
       break;
+      case 'OverflowBox':{
+        Navigator.of(context).pushNamed(RouteName.overflowBox);
+      }
+      break;
       default:{
         ToastUtils.showToast('未匹配$text');
       }

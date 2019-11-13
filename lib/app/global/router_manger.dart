@@ -10,6 +10,7 @@ import 'package:flutter_widget/pages/decoratedbox_page.dart';
 import 'package:flutter_widget/pages/fittedbox_page.dart';
 import 'package:flutter_widget/pages/flexiblespacebar_page.dart';
 import 'package:flutter_widget/pages/home_page.dart';
+import 'package:flutter_widget/pages/overflowbox_page.dart';
 import 'package:flutter_widget/pages/provider_page.dart';
 import 'package:flutter_widget/pages/sliverappbar_page.dart';
 import 'package:flutter_widget/pages/snackbar_page.dart';
@@ -33,6 +34,7 @@ class RouteName {
   static const String decoratedBox = 'decoratedBox';
   static const String provider = 'provider';
   static const String fittedBox = 'FittedBox';
+  static const String overflowBox = 'OverflowBox';
 
 }
 
@@ -67,6 +69,8 @@ class Router {
         return AnimRouteBuilder(ProviderPage());
       case RouteName.fittedBox:
         return AnimRouteBuilder(FittedBoxPage());
+      case RouteName.overflowBox:
+        return AnimRouteBuilder(OverflowBoxPage());
       default:
         return MaterialPageRoute(
             builder: (_) => Scaffold(
