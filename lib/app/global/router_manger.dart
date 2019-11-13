@@ -7,6 +7,7 @@ import 'package:flutter_widget/pages/bottomnavigationbar_page.dart';
 import 'package:flutter_widget/pages/buttonbar_page.dart';
 import 'package:flutter_widget/pages/constrainedbox_page.dart';
 import 'package:flutter_widget/pages/decoratedbox_page.dart';
+import 'package:flutter_widget/pages/fittedbox_page.dart';
 import 'package:flutter_widget/pages/flexiblespacebar_page.dart';
 import 'package:flutter_widget/pages/home_page.dart';
 import 'package:flutter_widget/pages/provider_page.dart';
@@ -31,6 +32,7 @@ class RouteName {
   static const String constrainedBox = 'constrainedBox';
   static const String decoratedBox = 'decoratedBox';
   static const String provider = 'provider';
+  static const String fittedBox = 'FittedBox';
 
 }
 
@@ -63,6 +65,8 @@ class Router {
         return AnimRouteBuilder(DecoratedBoxPage());
       case RouteName.provider:
         return AnimRouteBuilder(ProviderPage());
+      case RouteName.fittedBox:
+        return AnimRouteBuilder(FittedBoxPage());
       default:
         return MaterialPageRoute(
             builder: (_) => Scaffold(

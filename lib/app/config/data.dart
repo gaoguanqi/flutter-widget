@@ -14,7 +14,7 @@ class Data {
     _homeData.add('ConstrainedBox');
     _homeData.add('DecoratedBox');
     _homeData.add('Provider');
-    _homeData.add('13');
+    _homeData.add('FittedBox');
     _homeData.add('14');
     _homeData.add('15');
     _homeData.add('16');
