@@ -12,6 +12,7 @@ import 'package:flutter_widget/pages/flexiblespacebar_page.dart';
 import 'package:flutter_widget/pages/home_page.dart';
 import 'package:flutter_widget/pages/overflowbox_page.dart';
 import 'package:flutter_widget/pages/provider_page.dart';
+import 'package:flutter_widget/pages/rotatedbox_page.dart';
 import 'package:flutter_widget/pages/sliverappbar_page.dart';
 import 'package:flutter_widget/pages/snackbar_page.dart';
 import 'package:flutter_widget/pages/tabbar_page.dart';
@@ -35,6 +36,7 @@ class RouteName {
   static const String provider = 'provider';
   static const String fittedBox = 'FittedBox';
   static const String overflowBox = 'OverflowBox';
+  static const String rotatedBox = 'RotatedBox';
 
 }
 
@@ -71,6 +73,8 @@ class Router {
         return AnimRouteBuilder(FittedBoxPage());
       case RouteName.overflowBox:
         return AnimRouteBuilder(OverflowBoxPage());
+      case RouteName.rotatedBox:
+        return AnimRouteBuilder(RotatedBoxPage());
       default:
         return MaterialPageRoute(
             builder: (_) => Scaffold(
