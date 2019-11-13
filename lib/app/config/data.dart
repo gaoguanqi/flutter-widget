@@ -17,7 +17,7 @@ class Data {
     _homeData.add('FittedBox');
     _homeData.add('OverflowBox');
     _homeData.add('RotatedBox');
-    _homeData.add('16');
+    _homeData.add('SizedBox');
     _homeData.add('17');
     _homeData.add('18');
     _homeData.add('19');

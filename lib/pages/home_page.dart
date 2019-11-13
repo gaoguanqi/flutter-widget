@@ -133,6 +133,10 @@ class _HomePageState extends State<HomePage> {
         Navigator.of(context).pushNamed(RouteName.rotatedBox);
       }
       break;
+      case 'SizedBox':{
+        Navigator.of(context).pushNamed(RouteName.sizedBox);
+      }
+      break;
       default:{
         ToastUtils.showToast('未匹配$text');
       }
