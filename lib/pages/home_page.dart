@@ -137,6 +137,10 @@ class _HomePageState extends State<HomePage> {
         Navigator.of(context).pushNamed(RouteName.sizedBox);
       }
       break;
+      case 'DropdownButton':{
+        Navigator.of(context).pushNamed(RouteName.dropdownButton);
+      }
+      break;
       default:{
         ToastUtils.showToast('未匹配$text');
       }

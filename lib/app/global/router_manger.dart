@@ -7,6 +7,7 @@ import 'package:flutter_widget/pages/bottomnavigationbar_page.dart';
 import 'package:flutter_widget/pages/buttonbar_page.dart';
 import 'package:flutter_widget/pages/constrainedbox_page.dart';
 import 'package:flutter_widget/pages/decoratedbox_page.dart';
+import 'package:flutter_widget/pages/dropdownbutton_page.dart';
 import 'package:flutter_widget/pages/fittedbox_page.dart';
 import 'package:flutter_widget/pages/flexiblespacebar_page.dart';
 import 'package:flutter_widget/pages/home_page.dart';
@@ -39,6 +40,7 @@ class RouteName {
   static const String overflowBox = 'OverflowBox';
   static const String rotatedBox = 'RotatedBox';
   static const String sizedBox = 'SizedBox';
+  static const String dropdownButton = 'DropdownButton';
 
 }
 
@@ -79,6 +81,8 @@ class Router {
         return AnimRouteBuilder(RotatedBoxPage());
       case RouteName.sizedBox:
         return AnimRouteBuilder(SizedBoxPage());
+      case RouteName.dropdownButton:
+        return AnimRouteBuilder(DropdownButtonPage());
       default:
         return MaterialPageRoute(
             builder: (_) => Scaffold(
