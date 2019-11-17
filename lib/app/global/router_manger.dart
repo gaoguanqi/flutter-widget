@@ -17,6 +17,7 @@ import 'package:flutter_widget/pages/iconbutton_page.dart';
 import 'package:flutter_widget/pages/outlinebutton_page.dart';
 import 'package:flutter_widget/pages/overflowbox_page.dart';
 import 'package:flutter_widget/pages/provider_page.dart';
+import 'package:flutter_widget/pages/raisedbutton_page.dart';
 import 'package:flutter_widget/pages/rotatedbox_page.dart';
 import 'package:flutter_widget/pages/sizedbox_page.dart';
 import 'package:flutter_widget/pages/sliverappbar_page.dart';
@@ -49,6 +50,7 @@ class RouteName {
   static const String floatingActionButton = 'FloatingActionButton';
   static const String iconButton = 'IconButton';
   static const String outLineButton = 'OutLineButton';
+  static const String raisedButton = 'RaisedButton';
 
 }
 
@@ -99,6 +101,8 @@ class Router {
         return AnimRouteBuilder(IconButtonPage());
       case RouteName.outLineButton:
         return AnimRouteBuilder(OutLineButtonPage());
+      case RouteName.raisedButton:
+        return AnimRouteBuilder(RaisedButtonPage());
       default:
         return MaterialPageRoute(
             builder: (_) => Scaffold(

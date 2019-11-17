@@ -23,7 +23,7 @@ class Data {
     _homeData.add('FloatingActionButton');
     _homeData.add('IconButton');
     _homeData.add('OutLineButton');
-    _homeData.add('22');
+    _homeData.add('RaisedButton');
     _homeData.add('23');
     _homeData.add('24');
     _homeData.add('25');

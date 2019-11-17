@@ -56,7 +56,7 @@ class _OutLineButtonPageState extends State<OutLineButtonPage> {
                   Icons.favorite,
                   color: _color,
                 ),
-                label: Text('点赞'))
+                label: Text('点赞',style: TextStyle(color: _color),))
           ],
         ),
       ),
