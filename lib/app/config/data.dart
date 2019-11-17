@@ -24,7 +24,7 @@ class Data {
     _homeData.add('IconButton');
     _homeData.add('OutLineButton');
     _homeData.add('RaisedButton');
-    _homeData.add('23');
+    _homeData.add('RawMaterialButton');
     _homeData.add('24');
     _homeData.add('25');
     _homeData.add('26');

@@ -161,6 +161,10 @@ class _HomePageState extends State<HomePage> {
         Navigator.of(context).pushNamed(RouteName.raisedButton);
       }
       break;
+      case 'RawMaterialButton':{
+        Navigator.of(context).pushNamed(RouteName.rawMaterialButton);
+      }
+      break;
       default:{
         ToastUtils.showToast('未匹配$text');
       }
