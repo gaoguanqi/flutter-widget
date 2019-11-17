@@ -20,7 +20,18 @@ class Data {
     _homeData.add('SizedBox');
     _homeData.add('DropdownButton');
     _homeData.add('FlatButton');
-    _homeData.add('19');
+    _homeData.add('FloatingActionButton');
+    _homeData.add('20');
+    _homeData.add('21');
+    _homeData.add('22');
+    _homeData.add('23');
+    _homeData.add('24');
+    _homeData.add('25');
+    _homeData.add('26');
+    _homeData.add('27');
+    _homeData.add('28');
+    _homeData.add('29');
+    _homeData.add('30');
     return _homeData;
   }
 }
