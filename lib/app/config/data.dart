@@ -22,7 +22,7 @@ class Data {
     _homeData.add('FlatButton');
     _homeData.add('FloatingActionButton');
     _homeData.add('IconButton');
-    _homeData.add('21');
+    _homeData.add('OutLineButton');
     _homeData.add('22');
     _homeData.add('23');
     _homeData.add('24');

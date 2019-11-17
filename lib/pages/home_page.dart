@@ -153,6 +153,10 @@ class _HomePageState extends State<HomePage> {
         Navigator.of(context).pushNamed(RouteName.iconButton);
       }
       break;
+      case 'OutLineButton':{
+        Navigator.of(context).pushNamed(RouteName.outLineButton);
+      }
+      break;
       default:{
         ToastUtils.showToast('未匹配$text');
       }

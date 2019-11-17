@@ -5,9 +5,9 @@ import 'package:provider/provider.dart';
 
 import 'app/global/router_manger.dart';
 
-void main(){
+void main() {
   List<SingleChildCloneableWidget> provides = [
-    ChangeNotifierProvider.value(value:CountProvide()), //默认 0
+    ChangeNotifierProvider.value(value: CountProvide()), //默认 0
 //    ChangeNotifierProvider.value(value:CountProvide.ofCount(5)),//默认为5
   ];
 
@@ -27,7 +27,7 @@ class MyApp extends StatelessWidget {
         debugShowCheckedModeBanner: false,
         onGenerateRoute: Router.generateRoute,
         initialRoute: RouteName.home,
-        navigatorObservers: [BotToastNavigatorObserver()],//2.注册路由观察者
+        navigatorObservers: [BotToastNavigatorObserver()], //2.注册路由观察者
       ),
     );
   }
