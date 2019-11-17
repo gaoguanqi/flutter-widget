@@ -21,7 +21,7 @@ class Data {
     _homeData.add('DropdownButton');
     _homeData.add('FlatButton');
     _homeData.add('FloatingActionButton');
-    _homeData.add('20');
+    _homeData.add('IconButton');
     _homeData.add('21');
     _homeData.add('22');
     _homeData.add('23');

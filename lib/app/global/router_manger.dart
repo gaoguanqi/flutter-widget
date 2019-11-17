@@ -13,6 +13,7 @@ import 'package:flutter_widget/pages/flatbutton_page.dart';
 import 'package:flutter_widget/pages/flexiblespacebar_page.dart';
 import 'package:flutter_widget/pages/floatingactionbutton_page.dart';
 import 'package:flutter_widget/pages/home_page.dart';
+import 'package:flutter_widget/pages/iconbutton_page.dart';
 import 'package:flutter_widget/pages/overflowbox_page.dart';
 import 'package:flutter_widget/pages/provider_page.dart';
 import 'package:flutter_widget/pages/rotatedbox_page.dart';
@@ -45,6 +46,7 @@ class RouteName {
   static const String dropdownButton = 'DropdownButton';
   static const String flatButton = 'FlatButton';
   static const String floatingActionButton = 'FloatingActionButton';
+  static const String iconButton = 'IconButton';
 
 }
 
@@ -89,8 +91,10 @@ class Router {
         return AnimRouteBuilder(DropdownButtonPage());
       case RouteName.flatButton:
         return AnimRouteBuilder(FlatButtonPage());
-        case RouteName.floatingActionButton:
+      case RouteName.floatingActionButton:
         return AnimRouteBuilder(FloatingActionButtonPage());
+      case RouteName.iconButton:
+        return AnimRouteBuilder(IconButtonPage());
       default:
         return MaterialPageRoute(
             builder: (_) => Scaffold(
