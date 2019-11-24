@@ -6,6 +6,8 @@ import 'package:flutter_widget/pages/bottomappbar_page.dart';
 import 'package:flutter_widget/pages/bottomnavigationbar_page.dart';
 import 'package:flutter_widget/pages/buttonbar_page.dart';
 import 'package:flutter_widget/pages/card_page.dart';
+import 'package:flutter_widget/pages/checkbox_page.dart';
+import 'package:flutter_widget/pages/checkboxlisttitle_page.dart';
 import 'package:flutter_widget/pages/constrainedbox_page.dart';
 import 'package:flutter_widget/pages/decoratedbox_page.dart';
 import 'package:flutter_widget/pages/dropdownbutton_page.dart';
@@ -55,6 +57,8 @@ class RouteName {
   static const String raisedButton = 'RaisedButton';
   static const String rawMaterialButton = 'RawMaterialButton';
   static const String card = 'Card';
+  static const String checkbox = 'Checkbox';
+  static const String checkboxListTitle = 'CheckboxListTitle';
 
 }
 
@@ -111,6 +115,10 @@ class Router {
         return AnimRouteBuilder(RawMaterialButtonPage());
       case RouteName.card:
         return AnimRouteBuilder(CardPage());
+      case RouteName.checkbox:
+        return AnimRouteBuilder(CheckboxPage());
+      case RouteName.checkboxListTitle:
+        return AnimRouteBuilder(CheckboxListTitlePage());
       default:
         return MaterialPageRoute(
             builder: (_) => Scaffold(

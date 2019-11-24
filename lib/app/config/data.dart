@@ -26,8 +26,8 @@ class Data {
     _homeData.add('RaisedButton');
     _homeData.add('RawMaterialButton');
     _homeData.add('Card');
-    _homeData.add('25');
-    _homeData.add('26');
+    _homeData.add('Checkbox');
+    _homeData.add('CheckboxListTitle');
     _homeData.add('27');
     _homeData.add('28');
     _homeData.add('29');

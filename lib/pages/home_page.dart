@@ -169,6 +169,14 @@ class _HomePageState extends State<HomePage> {
         Navigator.of(context).pushNamed(RouteName.card);
       }
       break;
+      case 'Checkbox':{
+        Navigator.of(context).pushNamed(RouteName.checkbox);
+      }
+      break;
+      case 'CheckboxListTitle':{
+        Navigator.of(context).pushNamed(RouteName.checkboxListTitle);
+      }
+      break;
       default:{
         ToastUtils.showToast('未匹配$text');
       }
