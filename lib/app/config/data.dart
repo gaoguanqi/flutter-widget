@@ -28,7 +28,7 @@ class Data {
     _homeData.add('Card');
     _homeData.add('Checkbox');
     _homeData.add('CheckboxListTitle');
-    _homeData.add('27');
+    _homeData.add('Bloc');
     _homeData.add('28');
     _homeData.add('29');
     _homeData.add('30');

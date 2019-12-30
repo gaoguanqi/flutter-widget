@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_widget/pages/align_page.dart';
 import 'package:flutter_widget/pages/appbar_page.dart';
+import 'package:flutter_widget/pages/bloc_page.dart';
 import 'package:flutter_widget/pages/bottomappbar_page.dart';
 import 'package:flutter_widget/pages/bottomnavigationbar_page.dart';
 import 'package:flutter_widget/pages/buttonbar_page.dart';
@@ -31,20 +32,20 @@ import 'package:flutter_widget/pages/tabbar_page.dart';
 import 'page_route_anim.dart';
 
 class RouteName {
-  static const String home = 'home';
+  static const String home = 'Home';
 
-  static const String align = 'align';
-  static const String appBar = 'appBar';
-  static const String bottomAppBar = 'bottomAppBar';
-  static const String buttonBar = 'buttonBar';
-  static const String flexibleSpaceBar = 'flexibleSpaceBar';
-  static const String sliverAppBarPage = 'sliverAppBarPage';
-  static const String snackBar = 'snackBar';
-  static const String tabBar = 'tabBar';
-  static const String bottomNavigationBar = 'bottomNavigationBar';
-  static const String constrainedBox = 'constrainedBox';
-  static const String decoratedBox = 'decoratedBox';
-  static const String provider = 'provider';
+  static const String align = 'Align';
+  static const String appBar = 'AppBar';
+  static const String bottomAppBar = 'BottomAppBar';
+  static const String buttonBar = 'ButtonBar';
+  static const String flexibleSpaceBar = 'FlexibleSpaceBar';
+  static const String sliverAppBarPage = 'SliverAppBarPage';
+  static const String snackBar = 'SnackBar';
+  static const String tabBar = 'TabBar';
+  static const String bottomNavigationBar = 'BottomNavigationBar';
+  static const String constrainedBox = 'ConstrainedBox';
+  static const String decoratedBox = 'DecoratedBox';
+  static const String provider = 'Provider';
   static const String fittedBox = 'FittedBox';
   static const String overflowBox = 'OverflowBox';
   static const String rotatedBox = 'RotatedBox';
@@ -59,6 +60,7 @@ class RouteName {
   static const String card = 'Card';
   static const String checkbox = 'Checkbox';
   static const String checkboxListTitle = 'CheckboxListTitle';
+  static const String bloc = 'Bloc';
 
 }
 
@@ -119,6 +121,8 @@ class Router {
         return AnimRouteBuilder(CheckboxPage());
       case RouteName.checkboxListTitle:
         return AnimRouteBuilder(CheckboxListTitlePage());
+      case RouteName.bloc:
+        return AnimRouteBuilder(BlocPage());
       default:
         return MaterialPageRoute(
             builder: (_) => Scaffold(
