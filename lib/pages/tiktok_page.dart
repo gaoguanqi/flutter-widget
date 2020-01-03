@@ -1,6 +1,9 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_widget/app/global/toast_utils.dart';
+import 'package:like_button/like_button.dart';
+import 'package:marquee_flutter/marquee_flutter.dart';
 
 class TikTokPage extends StatelessWidget {
   @override
@@ -50,10 +53,15 @@ class _ContentPageState extends State<ContentPage>
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: _appBarList[_currentPage],
-      body: PageView.builder(itemBuilder: (context, index) {
-        this._currentPage = index;
-        return _pageList[index];
-      },controller: _pageController,physics: NeverScrollableScrollPhysics(),),// NeverScrollableScrollPhysics 禁止滑动可以这样使用
+      body: PageView.builder(
+        itemBuilder: (context, index) {
+          this._currentPage = index;
+          return _pageList[index];
+        },
+        controller: _pageController,
+        physics: NeverScrollableScrollPhysics(),
+      ),
+      // NeverScrollableScrollPhysics 禁止滑动可以这样使用
       bottomNavigationBar: BottomAppBar(
         color: Colors.black87,
         elevation: 0.0,
@@ -61,27 +69,26 @@ class _ContentPageState extends State<ContentPage>
           mainAxisSize: MainAxisSize.max,
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: <Widget>[
-           Expanded(
-             child:  FlatButton(
-               textColor: Colors.white,
-               disabledColor: Colors.grey,
-               disabledTextColor: Colors.black,
-               onPressed: () {
-                 setState(() {
-                   _currentPage = 0;
-                   _pageController.jumpToPage(_currentPage);
-                 });
-               },
-               child: Text(
-                 '首页',
-                 style: (_currentPage == 0)
-                     ? _selectTextStyle
-                     : _unSelectTextStyle,
-               ),
-             ),
-             flex: 1,
-           ),
-
+            Expanded(
+              child: FlatButton(
+                textColor: Colors.white,
+                disabledColor: Colors.grey,
+                disabledTextColor: Colors.black,
+                onPressed: () {
+                  setState(() {
+                    _currentPage = 0;
+                    _pageController.jumpToPage(_currentPage);
+                  });
+                },
+                child: Text(
+                  '首页',
+                  style: (_currentPage == 0)
+                      ? _selectTextStyle
+                      : _unSelectTextStyle,
+                ),
+              ),
+              flex: 1,
+            ),
             Expanded(
               child: FlatButton(
                 textColor: Colors.white,
@@ -102,7 +109,6 @@ class _ContentPageState extends State<ContentPage>
               ),
               flex: 1,
             ),
-
             GestureDetector(
               child: ConstrainedBox(
                 constraints: BoxConstraints(
@@ -177,7 +183,6 @@ class _ContentPageState extends State<ContentPage>
               ),
               flex: 1,
             ),
-
             Expanded(
               child: FlatButton(
                 textColor: Colors.white,
@@ -204,13 +209,7 @@ class _ContentPageState extends State<ContentPage>
     );
   }
 
-
-
-
-
-
-
-  _homeAppBar(){
+  _homeAppBar() {
     return AppBar(
       backgroundColor: Colors.black87,
       centerTitle: true,
@@ -252,22 +251,23 @@ class _ContentPageState extends State<ContentPage>
     );
   }
 
-
-  _theCityAppBar(){
+  _theCityAppBar() {
     return AppBar(
       backgroundColor: Colors.black87,
       centerTitle: true,
       title: Text('同城'),
     );
   }
-  _addAppBar(){
+
+  _addAppBar() {
     return AppBar(
       backgroundColor: Colors.black87,
       centerTitle: true,
       title: Text('add'),
     );
   }
-  _messageAppBar(){
+
+  _messageAppBar() {
     return AppBar(
       backgroundColor: Colors.black87,
       centerTitle: true,
@@ -275,15 +275,13 @@ class _ContentPageState extends State<ContentPage>
     );
   }
 
-  _mineAppBar(){
+  _mineAppBar() {
     return AppBar(
       backgroundColor: Colors.black87,
       centerTitle: true,
       title: Text('我'),
     );
   }
-
-
 }
 
 class _HomePage extends StatefulWidget {
@@ -292,16 +290,195 @@ class _HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<_HomePage> {
+  int _likeCount= 1;
+
+  @override
+  void initState() {
+    super.initState();
+  }
   @override
   Widget build(BuildContext context) {
-    return Container(
-      child: Text('首页'),
+
+    return Stack(
+      children: <Widget>[
+        Container(
+          alignment: Alignment.center,
+          color: Colors.black54,
+        ),
+        Positioned(
+          bottom: ScreenUtil().setHeight(10.0),
+          width: ScreenUtil().setWidth(ScreenUtil().width * 0.72),
+          child: Container(
+            padding: EdgeInsets.all(ScreenUtil().setHeight(10.0)),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: <Widget>[
+                Text(
+                  '@人民日报',
+                  style: TextStyle(fontSize: 16.0, color: Colors.white),
+                ),
+                Padding(
+                  padding: EdgeInsets.only(top: ScreenUtil().setHeight(10.0)),
+                ),
+                Text(
+                  '做一个积分进度和类似物流进度的小组件，优先考虑的是自定义 ListView 但还是查阅了一下资料，发现神奇的 Stepper 步进器，虽不能完全满足需求，但提供了很好的思路',
+                  style: TextStyle(fontSize: 14.0, color: Colors.white),
+                  maxLines: 3,
+                  overflow: TextOverflow.ellipsis,
+                ),
+                Container(
+                  height: ScreenUtil().setHeight(80.0),
+//                  child: Text('开启下面的MarqueeWidget'),
+                  child: MarqueeWidget(
+                    text: 'ListView即滚动列表控件，能将子控件组成可滚动的列表。当你需要排列的子控件超出容器大小',
+                    textStyle: new TextStyle(fontSize: 14.0,color: Colors.white),
+                    scrollAxis: Axis.horizontal,
+                  ),
+                ),
+              ],
+            ),
+          ),
+        ),
+        Positioned(
+          right: ScreenUtil().setWidth(40.0),
+          top: ScreenUtil().setHeight(ScreenUtil().height * 0.32),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: <Widget>[
+              GestureDetector(
+                child: Container(
+                  width: ScreenUtil().setWidth(160.0),
+                  height: ScreenUtil().setHeight(200.0),
+                  child: Stack(
+                    children: <Widget>[
+                      Container(
+                        width: ScreenUtil().setWidth(160.0),
+                        height: ScreenUtil().setHeight(160.0),
+                        child: CircleAvatar(
+                          backgroundImage: NetworkImage(
+                            'https://upload.jianshu.io/users/upload_avatars/6260073/04ce23e0-aa4e-4d70-a300-bf52bebc6a36.jpg?imageMogr2/auto-orient/strip|imageView2/1/w/240/h/240',
+                          ),
+                        ),
+                      ),
+                      Positioned(
+                        top: ScreenUtil().setHeight(30.0),
+                        child: Container(
+                          width: ScreenUtil().setWidth(160.0),
+                          height: ScreenUtil().setHeight(160.0),
+                          alignment: Alignment.bottomCenter,
+                          child: Icon(
+                            Icons.add_circle,
+                            color: Colors.red,
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+                onTap: () {
+                  ToastUtils.showToast('点击头像');
+                },
+              ),
+              Column(
+                children: <Widget>[
+                  Padding(padding: EdgeInsets.only(top: ScreenUtil().setHeight(30.0)),),
+                  LikeButton(
+                    likeBuilder: (bool isLiked) {
+                      _likeCount = isLiked? _likeCount+1:_likeCount-1;
+                      return isLiked? Icon(Icons.favorite,color: Colors.red,):Icon(Icons.favorite,color: Colors.white,);
+                    },
+                  ),
+                  Text(_likeCount.toString(),style: TextStyle(color: Colors.white,fontSize: 12.0)),
+                ],
+              ),
+              GestureDetector(
+                child: Column(
+                  children: <Widget>[
+                    Padding(padding: EdgeInsets.only(top: ScreenUtil().setHeight(50.0)),),
+                    Icon(Icons.message,color: Colors.white,),
+                    Text('1',style: TextStyle(color: Colors.white,fontSize: 12.0)),
+                  ],
+                ),
+                onTap: (){
+                  ToastUtils.showToast('消息');
+                },
+              ),
+              GestureDetector(
+                child: Column(
+                  children: <Widget>[
+                    Padding(padding: EdgeInsets.only(top: ScreenUtil().setHeight(50.0)),),
+                    Icon(Icons.share,color: Colors.white,),
+                    Text('1',style: TextStyle(color: Colors.white,fontSize: 12.0)),
+                  ],
+                ),
+                onTap: (){
+                  ToastUtils.showToast('分享');
+                },
+              ),
+            ],
+          ),
+        ),
+        Positioned(
+          right: ScreenUtil().setWidth(10.0),
+          bottom: ScreenUtil().setHeight(20.0),
+//          child: Text('开启下面的RotateAlbum'),
+          child:  RotateAlbum(),
+        ),
+      ],
     );
   }
 }
 
+class RotateAlbum extends StatefulWidget {
+  @override
+  _RotateAlbumState createState() => _RotateAlbumState();
+}
 
+class _RotateAlbumState extends State<RotateAlbum>
+    with SingleTickerProviderStateMixin {
+  AnimationController _controller;
+  RotationTransition _transition;
 
+  @override
+  void initState() {
+    super.initState();
+    _controller =
+        AnimationController(vsync: this, duration: Duration(seconds: 8));
+    _transition = RotationTransition(
+      turns: Tween(begin: 0.0, end: 1.0).animate(_controller)
+        ..addStatusListener((status) {
+          if (status == AnimationStatus.completed) {
+            _controller.forward(from: 0.0);
+          }
+        }),
+      child: Container(
+        width: ScreenUtil().setWidth(160.0),
+        height: ScreenUtil().setHeight(160.0),
+        alignment: Alignment.center,
+        child: CircleAvatar(
+          backgroundImage: NetworkImage(
+            'https://upload.jianshu.io/users/upload_avatars/6260073/04ce23e0-aa4e-4d70-a300-bf52bebc6a36.jpg?imageMogr2/auto-orient/strip|imageView2/1/w/240/h/240',
+          ),
+        ),
+      ),
+    );
+    _controller.forward(from: 0.0);
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      padding: EdgeInsets.all(18),
+      child: _transition,
+    );
+  }
+
+  @override
+  void dispose() {
+    _controller.dispose();
+    super.dispose();
+  }
+}
 
 class _TheCityPage extends StatefulWidget {
   @override
@@ -317,8 +494,6 @@ class _TheCityPageState extends State<_TheCityPage> {
   }
 }
 
-
-
 class _MessagePage extends StatefulWidget {
   @override
   _MessagePageState createState() => _MessagePageState();
@@ -333,7 +508,6 @@ class _MessagePageState extends State<_MessagePage> {
   }
 }
 
-
 class _MinePage extends StatefulWidget {
   @override
   _MinePageState createState() => _MinePageState();
@@ -347,7 +521,6 @@ class _MinePageState extends State<_MinePage> {
     );
   }
 }
-
 
 class _AddPage extends StatefulWidget {
   @override

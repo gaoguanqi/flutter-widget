@@ -32,7 +32,10 @@ dependencies:
 
     # 添加依赖
   flutter_screenutil: ^0.7.0
-
+  #一个用ListView做的跑马灯，可以垂直方向滚动，也可以水平方向滚动。
+  #由于ListView回撑满空间，所以在水平滚动时，必须设置高度，垂直滚动时，必须设置宽度
+  marquee_flutter: ^0.1.4
+  like_button: ^0.1.9
 dev_dependencies:
   flutter_test:
     sdk: flutter
