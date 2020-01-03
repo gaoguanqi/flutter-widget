@@ -1,6 +1,7 @@
 import 'package:bot_toast/bot_toast.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_widget/pages/provider_page.dart';
+import 'package:flutter_widget/providers/like_provider.dart';
 import 'package:provider/provider.dart';
 import 'package:provider/single_child_widget.dart';
 
@@ -9,6 +10,7 @@ import 'app/global/router_manger.dart';
 void main() {
   List<SingleChildWidget> provides = [
     ChangeNotifierProvider.value(value: CountProvide()), //默认 0
+    ChangeNotifierProvider.value(value: LikeProvider()), //默认 0
 //    ChangeNotifierProvider.value(value:CountProvide.ofCount(5)),//默认为5
   ];
 
