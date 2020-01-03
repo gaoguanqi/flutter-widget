@@ -29,6 +29,7 @@ import 'package:flutter_widget/pages/sliverappbar_page.dart';
 import 'package:flutter_widget/pages/snackbar_page.dart';
 import 'package:flutter_widget/pages/tabbar_page.dart';
 import 'package:flutter_widget/pages/tabbarview_page.dart';
+import 'package:flutter_widget/pages/tiktok_page.dart';
 
 import 'page_route_anim.dart';
 
@@ -63,6 +64,7 @@ class RouteName {
   static const String checkbox = 'Checkbox';
   static const String checkboxListTitle = 'CheckboxListTitle';
   static const String bloc = 'Bloc';
+  static const String tikTok = 'TikTok';
 
 }
 
@@ -127,6 +129,8 @@ class Router {
         return AnimRouteBuilder(CheckboxListTitlePage());
       case RouteName.bloc:
         return AnimRouteBuilder(BlocPage());
+      case RouteName.tikTok:
+        return AnimRouteBuilder(TikTokPage());
       default:
         return MaterialPageRoute(
             builder: (_) => Scaffold(

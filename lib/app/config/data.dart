@@ -33,6 +33,7 @@ class Data {
     _homeData.add('28');
     _homeData.add('29');
     _homeData.add('30');
+    _homeData.add('TikTok');
     return _homeData;
   }
 }

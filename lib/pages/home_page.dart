@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_staggered_animations/flutter_staggered_animations.dart';
 import 'package:flutter_widget/app/config/data.dart';
 import 'package:flutter_widget/app/global/router_manger.dart';
@@ -15,6 +16,8 @@ class _HomePageState extends State<HomePage> {
 
   @override
   Widget build(BuildContext context) {
+    ScreenUtil.instance = ScreenUtil.getInstance()..init(context);
+
     return WillPopScope(
       child: Scaffold(
         appBar: AppBar(
@@ -183,6 +186,10 @@ class _HomePageState extends State<HomePage> {
       break;
       case 'Bloc':{
         Navigator.of(context).pushNamed(RouteName.bloc);
+      }
+      break;
+      case 'TikTok':{
+        Navigator.of(context).pushNamed(RouteName.tikTok);
       }
       break;
       default:{
