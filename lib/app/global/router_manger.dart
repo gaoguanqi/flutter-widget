@@ -28,6 +28,7 @@ import 'package:flutter_widget/pages/sizedbox_page.dart';
 import 'package:flutter_widget/pages/sliverappbar_page.dart';
 import 'package:flutter_widget/pages/snackbar_page.dart';
 import 'package:flutter_widget/pages/tabbar_page.dart';
+import 'package:flutter_widget/pages/tabbarview_page.dart';
 
 import 'page_route_anim.dart';
 
@@ -42,6 +43,7 @@ class RouteName {
   static const String sliverAppBarPage = 'SliverAppBarPage';
   static const String snackBar = 'SnackBar';
   static const String tabBar = 'TabBar';
+  static const String tabBarView = 'TabBarView';
   static const String bottomNavigationBar = 'BottomNavigationBar';
   static const String constrainedBox = 'ConstrainedBox';
   static const String decoratedBox = 'DecoratedBox';
@@ -85,6 +87,8 @@ class Router {
         return AnimRouteBuilder(SnackBarPage());
      case RouteName.tabBar:
         return AnimRouteBuilder(TabBarPage());
+      case RouteName.tabBarView:
+        return AnimRouteBuilder(TabBarViewPage());
      case RouteName.bottomNavigationBar:
         return AnimRouteBuilder(BottomNavigationBarPage());
      case RouteName.constrainedBox:

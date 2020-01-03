@@ -105,6 +105,10 @@ class _HomePageState extends State<HomePage> {
         Navigator.of(context).pushNamed(RouteName.tabBar);
       }
       break;
+      case 'TabBarView':{
+        Navigator.of(context).pushNamed(RouteName.tabBarView);
+      }
+      break;
       case 'BottomNavigationBar':{
         Navigator.of(context).pushNamed(RouteName.bottomNavigationBar);
       }
