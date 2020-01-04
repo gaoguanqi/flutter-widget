@@ -34,6 +34,7 @@ class Data {
     _homeData.add('29');
     _homeData.add('30');
     _homeData.add('TikTok');
+    _homeData.add('AnimPage');
     return _homeData;
   }
 }

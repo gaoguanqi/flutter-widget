@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_widget/pages/align_page.dart';
+import 'package:flutter_widget/pages/anim_page.dart';
 import 'package:flutter_widget/pages/appbar_page.dart';
 import 'package:flutter_widget/pages/bloc_page.dart';
 import 'package:flutter_widget/pages/bottomappbar_page.dart';
@@ -65,6 +66,7 @@ class RouteName {
   static const String checkboxListTitle = 'CheckboxListTitle';
   static const String bloc = 'Bloc';
   static const String tikTok = 'TikTok';
+  static const String animPage = 'AnimPage';
 
 }
 
@@ -131,6 +133,8 @@ class Router {
         return AnimRouteBuilder(BlocPage());
       case RouteName.tikTok:
         return AnimRouteBuilder(TikTokPage());
+      case RouteName.animPage:
+        return AnimRouteBuilder(AnimPage());
       default:
         return MaterialPageRoute(
             builder: (_) => Scaffold(
