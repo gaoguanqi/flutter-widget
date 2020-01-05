@@ -196,6 +196,10 @@ class _HomePageState extends State<HomePage> {
         Navigator.of(context).pushNamed(RouteName.animPage);
       }
       break;
+      case 'TikTokLogin':{
+        Navigator.of(context).pushNamed(RouteName.tikTokLogin);
+      }
+      break;
       default:{
         ToastUtils.showToast('未匹配$text');
       }

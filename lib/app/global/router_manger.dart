@@ -31,6 +31,7 @@ import 'package:flutter_widget/pages/snackbar_page.dart';
 import 'package:flutter_widget/pages/tabbar_page.dart';
 import 'package:flutter_widget/pages/tabbarview_page.dart';
 import 'package:flutter_widget/pages/tiktok_page.dart';
+import 'package:flutter_widget/pages/tiktoklogin_page.dart';
 
 import 'page_route_anim.dart';
 
@@ -67,6 +68,7 @@ class RouteName {
   static const String bloc = 'Bloc';
   static const String tikTok = 'TikTok';
   static const String animPage = 'AnimPage';
+  static const String tikTokLogin = 'TikTokLogin';
 
 }
 
@@ -135,6 +137,8 @@ class Router {
         return AnimRouteBuilder(TikTokPage());
       case RouteName.animPage:
         return AnimRouteBuilder(AnimPage());
+      case RouteName.tikTokLogin:
+        return AnimRouteBuilder(TikTokLoginPage());
       default:
         return MaterialPageRoute(
             builder: (_) => Scaffold(
