@@ -1,5 +1,8 @@
+import 'dart:io';
+
 import 'package:bot_toast/bot_toast.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_widget/pages/provider_page.dart';
 import 'package:flutter_widget/providers/like_provider.dart';
 import 'package:provider/provider.dart';
@@ -18,6 +21,13 @@ void main() {
     providers: provides,
     child: MyApp(),
   ));
+
+  if (Platform.isAndroid) {
+    ///设置Android状态栏透明
+    SystemUiOverlayStyle systemUiOverlayStyle =
+    SystemUiOverlayStyle(statusBarColor: Colors.white,statusBarIconBrightness: Brightness.dark);
+    SystemChrome.setSystemUIOverlayStyle(systemUiOverlayStyle);
+  }
 }
 
 class MyApp extends StatelessWidget {
@@ -30,6 +40,9 @@ class MyApp extends StatelessWidget {
         debugShowCheckedModeBanner: false,
         onGenerateRoute: Router.generateRoute,
         initialRoute: RouteName.home,
+        theme: ThemeData(
+          primaryColor: Colors.white,
+        ),
         navigatorObservers: [BotToastNavigatorObserver()], //2.注册路由观察者
       ),
     );

@@ -4,6 +4,8 @@ import 'package:flutter_staggered_animations/flutter_staggered_animations.dart';
 import 'package:flutter_widget/app/config/data.dart';
 import 'package:flutter_widget/app/global/router_manger.dart';
 import 'package:flutter_widget/app/global/toast_utils.dart';
+import 'package:flutter_widget/pages/anim_page.dart';
+import 'package:flutter_widget/pages/tiktoklogin_page.dart';
 
 class HomePage extends StatefulWidget {
   @override
@@ -197,7 +199,8 @@ class _HomePageState extends State<HomePage> {
       }
       break;
       case 'TikTokLogin':{
-        Navigator.of(context).pushNamed(RouteName.tikTokLogin);
+//        Navigator.of(context).pushNamed(RouteName.tikTokLogin);
+        Navigator.of(context).push(Bottom2TopRoutePage(TikTokLoginPage()));
       }
       break;
       default:{
