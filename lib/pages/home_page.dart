@@ -203,6 +203,10 @@ class _HomePageState extends State<HomePage> {
         Navigator.of(context).push(Bottom2TopRoutePage(TikTokLoginPage()));
       }
       break;
+      case 'SugarTabBar':{
+        Navigator.of(context).pushNamed(RouteName.sugarTabBar);
+      }
+      break;
       default:{
         ToastUtils.showToast('未匹配$text');
       }

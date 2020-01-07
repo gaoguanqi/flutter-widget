@@ -28,6 +28,7 @@ import 'package:flutter_widget/pages/rotatedbox_page.dart';
 import 'package:flutter_widget/pages/sizedbox_page.dart';
 import 'package:flutter_widget/pages/sliverappbar_page.dart';
 import 'package:flutter_widget/pages/snackbar_page.dart';
+import 'package:flutter_widget/pages/sugartabbar_page.dart';
 import 'package:flutter_widget/pages/tabbar_page.dart';
 import 'package:flutter_widget/pages/tabbarview_page.dart';
 import 'package:flutter_widget/pages/tiktok_page.dart';
@@ -69,6 +70,7 @@ class RouteName {
   static const String tikTok = 'TikTok';
   static const String animPage = 'AnimPage';
   static const String tikTokLogin = 'TikTokLogin';
+  static const String sugarTabBar = 'SugarTabBar';
 
 }
 
@@ -139,6 +141,8 @@ class Router {
         return AnimRouteBuilder(AnimPage());
       case RouteName.tikTokLogin:
         return AnimRouteBuilder(TikTokLoginPage());
+      case RouteName.sugarTabBar:
+        return AnimRouteBuilder(SugarTabBarPage());
       default:
         return MaterialPageRoute(
             builder: (_) => Scaffold(
