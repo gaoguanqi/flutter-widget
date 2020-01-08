@@ -22,6 +22,7 @@ class _SugarTabBarPageState extends State<SugarTabBarPage> with SingleTickerProv
     _tabs = List();
     _tabs.add(Tab(child: Text('推荐',),),);
     _tabs.add(Tab(child: Text('关注',),),);
+
     _tabBarViews = List();
     _tabBarViews.add(Container(
       alignment: Alignment.center,
@@ -33,15 +34,14 @@ class _SugarTabBarPageState extends State<SugarTabBarPage> with SingleTickerProv
     ));
     _tabController = TabController(initialIndex: 0,length: _tabs.length,vsync: this);
     _indicator = MyUnderlineTabIndicator();
-    _tabController.addListener( (){
+    _tabController.addListener((){
       if (_tabController.indexIsChanging) {//判断TabBar是否切换
         print('1111111');
-
       }else{
         print('22222');
-
       }
     });
+
 
   }
   @override
