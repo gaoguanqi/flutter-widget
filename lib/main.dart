@@ -3,6 +3,7 @@ import 'dart:io';
 import 'package:bot_toast/bot_toast.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_widget/app/base/bloc.dart';
 import 'package:flutter_widget/pages/provider_page.dart';
 import 'package:flutter_widget/providers/like_provider.dart';
 import 'package:provider/provider.dart';

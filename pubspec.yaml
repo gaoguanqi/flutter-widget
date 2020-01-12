@@ -29,6 +29,7 @@ dependencies:
 
   bloc: ^3.0.0
   flutter_bloc: ^3.0.0
+  rxdart: ^0.23.1
 
     # 添加依赖
   flutter_screenutil: ^0.7.0
