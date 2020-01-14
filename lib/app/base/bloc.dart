@@ -22,7 +22,6 @@ abstract class BlocBase {
   /// 是否自动释放资源，默认为true，如果自动释放会在对应state销毁时调用[dispose]
   bool autoRelease() => true;
 
-
   void dispose();
 }
 
